@@ -6,6 +6,8 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
   return (
+    <>
+    <h2>News OnDemand</h2>
     <div className='Auth-div'>
       {/* <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button> */}
       {/* { showSignUp ? */}
@@ -15,5 +17,6 @@ export default function AuthPage({ setUser }) {
           <LoginForm setUser={setUser} />
       {/* } */}
     </div>
+    </>
   );
 }
