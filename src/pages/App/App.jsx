@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
+import NewsPage from '../NewsPage/NewsPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -14,7 +15,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            {/* Route components in here */}
+          <Route path="/news" element={<NewsPage user={user} setUser={setUser} />} /> 
+          <Route path="/*" element={<Navigate to="/news" />} /> 
             
           </Routes>
         </>
