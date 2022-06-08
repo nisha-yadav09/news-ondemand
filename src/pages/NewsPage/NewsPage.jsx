@@ -9,7 +9,10 @@ export default function NewsPage({ setUser }) {
 
     useEffect(function () {
         async function getNews() {
-            const news = await newsAPI.getAll();
+            const trends = await newsAPI.getAll();
+            const news = trends.filter(function(n){
+                return n.tweet_volume !== null
+            })
             setBusy(false);
             setNews(news);
         }
@@ -22,7 +25,7 @@ export default function NewsPage({ setUser }) {
             <h2> <h1>🗺</h1> News OnDemand </h2>
             {isBusy ? (<p></p>) : (
                news.map(function (d, id) {
-                    return <li>{d.title}</li>;
+                    return <li>{d.name} {d.tweet_volume}</li>;
                 })
             )}
         </>
