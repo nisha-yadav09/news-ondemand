@@ -1,6 +1,8 @@
 const fetch = require('node-fetch');
 
 const token = process.env.token;
+const twitterToken = process.env.TWITTER_TOKEN;
+const newsToken = process.env.NEWS_TOKEN;
 
 module.exports = {
    getNews,
@@ -12,7 +14,7 @@ async function getNews(req, res) {
   console.log(rootURL);
   const options = {
     headers: {
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAOoPdgEAAAAAJ2Yk7IA9iKx5oThc1JFds0JeBqA%3D72eF0eDJwsQxQC1BKzvYlc0ub8FfECXwVs8DAEEZgley7Jp4lq`
+      Authorization: `Bearer ${twitterToken}`
     }
   };
 
@@ -25,7 +27,7 @@ async function getNews(req, res) {
   }
 
 async function getNewsScience(req, res) {
-    const rootURL = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=8af68f1d04364fb89d4e560a3d4cec65&category=science';
+    const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=science`;
     const options = {
       headers: {
         // Authorization: `token ${token}`,
