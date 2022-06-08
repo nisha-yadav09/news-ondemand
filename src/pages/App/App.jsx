@@ -16,8 +16,7 @@ function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
           <Route path="/news" element={<NewsPage user={user} setUser={setUser} />} /> 
-          {/* <Route path="/*" element={<Navigate to="/news" user={user} setUser={setUser} />} />  */}
-            
+          <Route path="/*" element={<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>
         :
