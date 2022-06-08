@@ -12,6 +12,13 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >General</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Science</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Technology</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Business</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Sports</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Health</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" >Entertainment</Link>
       <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>

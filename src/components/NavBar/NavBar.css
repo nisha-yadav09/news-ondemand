@@ -1,0 +1,22 @@
+
+
+.Auth-div {
+  background-color: white;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  grid-template-rows: 20px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.vl {
+  border-left: 4px solid black;
+  height: 500px;
+}
+
+.nav-link {
+  margin-right: 100px;
+}
+
