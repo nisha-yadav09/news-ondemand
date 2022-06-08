@@ -3,25 +3,25 @@ import '../AuthPage/AuthPage.css';
 import { useState, useEffect } from 'react';
 import * as newsAPI from '../../utilities/news-api';
 
-export default function NewsPage({ setUser }) {
+export default function SciencePage({ setUser }) {
     const [isBusy, setBusy] = useState(true)
-    const [news, setNews] = useState([]);
+    const [science, setScience] = useState([]);
 
     useEffect(function () {
-        async function getNews() {
-            const news = await newsAPI.getAll();
+        async function getNewsScience() {
+            const science = await newsAPI.getScience();
             setBusy(false);
-            setNews(news);
+            setScience(science);
         }
-        getNews();
-        console.log(news);
+        getNewsScience();
     }, []);
 
     return (
         <>
-            <h2> <h1>🗺</h1> News OnDemand </h2>
+            <h2> <h1>🗺</h1> Science News </h2>
+           
             {isBusy ? (<p></p>) : (
-               news.map(function (d, id) {
+                science.map(function (d, id) {
                     return <li>{d.title}</li>;
                 })
             )}

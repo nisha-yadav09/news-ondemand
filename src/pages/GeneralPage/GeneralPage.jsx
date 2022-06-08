@@ -3,7 +3,7 @@ import '../AuthPage/AuthPage.css';
 import { useState, useEffect } from 'react';
 import * as newsAPI from '../../utilities/news-api';
 
-export default function NewsPage({ setUser }) {
+export default function GeneralPage({ setUser }) {
     const [isBusy, setBusy] = useState(true)
     const [news, setNews] = useState([]);
 
@@ -14,14 +14,13 @@ export default function NewsPage({ setUser }) {
             setNews(news);
         }
         getNews();
-        console.log(news);
     }, []);
 
     return (
         <>
-            <h2> <h1>🗺</h1> News OnDemand </h2>
+            <h2> <h1>🗺</h1> General News </h2>
             {isBusy ? (<p></p>) : (
-               news.map(function (d, id) {
+                news.map(function (d, id) {
                     return <li>{d.title}</li>;
                 })
             )}
