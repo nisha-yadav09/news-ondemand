@@ -22,7 +22,7 @@ export default function NewsPage({ setUser }) {
 
     return (
         <>
-            <h2> <h1>🗺</h1> News OnDemand </h2>
+            <h2> <h1>🗺</h1> What's Trending </h2>
             {isBusy ? (<p></p>) : (
                news.map(function (d, id) {
                     return <li>{d.name} {d.tweet_volume}</li>;
