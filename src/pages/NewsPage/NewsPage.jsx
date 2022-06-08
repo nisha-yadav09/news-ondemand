@@ -8,6 +8,7 @@ export default function NewsPage({ setUser }) {
   const [news, setNews] = useState(null);
   useEffect(function() {
     async function getNews() {
+      console.log("HII")
       const news = await newsAPI.getAll();
       setNews(news);
     }
