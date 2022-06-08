@@ -5,12 +5,11 @@ import * as newsAPI from '../../utilities/news-api';
 
 export default function NewsPage({ setUser }) {
   // const [showSignUp, setShowSignUp] = useState(false);
-  const [news, setNews] = useState(null);
+  const [news, setNews] = useState({});
   useEffect(function() {
     async function getNews() {
-      console.log("HII")
       const news = await newsAPI.getAll();
-      setNews(news);
+      setNews(JSON.parse(news));
     }
     getNews();
   }, []);
@@ -18,9 +17,14 @@ export default function NewsPage({ setUser }) {
   return (
     <>
     <h2> <h1>🗺</h1> News OnDemand </h2>
-    <div className=''>
-        {news}
-    </div>
+    {
+        news.articles.map(function (d) {
+          return <li>{d.title}</li>;
+        })
+    }
     </>
   );
 }
+
+
+
