@@ -22,3 +22,7 @@ export function getBusiness() {
 export function getSports() {
   return sendRequest(`${BASE_URL}/sports`);
 }
+
+export function getHealth() {
+  return sendRequest(`${BASE_URL}/health`);
+}

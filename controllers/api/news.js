@@ -10,6 +10,8 @@ module.exports = {
    getNewsTech,
    getNewsBusiness,
    getNewsSports,
+   getNewsHealth,
+   getNewsEntertainment
   };
 
 async function getNews(req, res) {
@@ -82,6 +84,40 @@ async function getNewsBusiness(req, res) {
 
 async function getNewsSports(req, res) {
   const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=sports`;
+  const options = {
+    headers: {
+      // Authorization: `token ${token}`,
+      "Content-Type": "application/json",
+      Accept: 'application/json;charset=utf-8',
+      withCredentials: true,
+      'User-Agent': '*',
+    }
+  };
+
+  const response = await fetch(`${rootURL}`);
+  const responseData = await response.json();
+  res.json(responseData.articles);
+}
+
+async function getNewsHealth(req, res) {
+  const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=health`;
+  const options = {
+    headers: {
+      // Authorization: `token ${token}`,
+      "Content-Type": "application/json",
+      Accept: 'application/json;charset=utf-8',
+      withCredentials: true,
+      'User-Agent': '*',
+    }
+  };
+
+  const response = await fetch(`${rootURL}`);
+  const responseData = await response.json();
+  res.json(responseData.articles);
+}
+
+async function getNewsEntertainment(req, res) {
+  const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=entertainment`;
   const options = {
     headers: {
       // Authorization: `token ${token}`,

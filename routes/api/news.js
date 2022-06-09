@@ -12,4 +12,9 @@ router.get('/technology', newsCtrl.getNewsTech);
 router.get('/business', newsCtrl.getNewsBusiness);
 // GET /api/news/sports
 router.get('/sports', newsCtrl.getNewsSports);
+// GET /api/news/health
+router.get('/health', newsCtrl.getNewsHealth);
+// GET /api/news/entertainment
+router.get('/entertainment', newsCtrl.getNewsEntertainment);
+
 module.exports = router;
