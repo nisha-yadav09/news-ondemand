@@ -2,7 +2,7 @@ import '../NewsPage/NewsPage.css';
 import { useState, useEffect } from 'react';
 import * as newsAPI from '../../utilities/news-api';
 import BarChart from "../../components/BarChart/BarChart";
-
+import LineChart from "../../components/LineChart/LineChart";
 
 export default function NewsPage({ setUser }) {
     
@@ -22,7 +22,7 @@ export default function NewsPage({ setUser }) {
                 labels: news.map((data) => data.name),
                 datasets: [
                   {
-                    label: "What's Trending Today",
+                    label: "What's Trending Today - USA",
                     data: news.map((data) => data.tweet_volume),
                     backgroundColor: [
                       "rgba(75,192,192,1)",
@@ -46,6 +46,9 @@ export default function NewsPage({ setUser }) {
            {(isBusy ? <p/> : <div className="App">
                 <div style={{ width: 700 }}>
                     <BarChart chartData={userData} />
+                </div>
+                <div style={{ width: 700 }}>
+                    <LineChart chartData={userData} />
                 </div>
             </div>)}
         </>

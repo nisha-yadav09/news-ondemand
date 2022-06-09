@@ -15,22 +15,22 @@ module.exports = {
    getNewsGeneral
   };
 
-async function getNews(req, res) {
-  const rootURL = 'https://api.twitter.com/1.1/trends/place.json?id=23424977';
-  console.log(rootURL);
-  const options = {
-    headers: {
-      Authorization: `Bearer ${twitterToken}`
-    }
-  };
-
-  const response = await fetch(`${rootURL}` ,options);
-  const responseData = await response.text();
-  //console.log((JSON.parse(responseData)));
-  const data = JSON.parse(responseData);
-  console.log(data[0].trends);
-  res.json(data[0].trends);
-  }
+  async function getNews(req, res) {
+    const rootURL = 'https://api.twitter.com/1.1/trends/place.json?id=23424977';
+    console.log(rootURL);
+    const options = {
+      headers: {
+        Authorization: `Bearer ${twitterToken}`
+      }
+    };
+  
+    const response = await fetch(`${rootURL}` ,options);
+    const responseData = await response.text();
+    //console.log((JSON.parse(responseData)));
+    const data = JSON.parse(responseData);
+    console.log(data[0].trends);
+    res.json(data[0].trends);
+}
 
 async function getNewsScience(req, res) {
     const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=science`;
@@ -138,7 +138,6 @@ async function getNewsGeneral(req, res) {
   const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}`;
   const options = {
     headers: {
-      // Authorization: `token ${token}`,
       "Content-Type": "application/json",
       Accept: 'application/json;charset=utf-8',
       withCredentials: true,
