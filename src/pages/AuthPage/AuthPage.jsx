@@ -4,7 +4,6 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
 export default function AuthPage({ setUser }) {
-  // const [showSignUp, setShowSignUp] = useState(false);
   return (
     <>
     <h2> <h1>🗺</h1> News OnDemand </h2>

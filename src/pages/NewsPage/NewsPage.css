@@ -1,0 +1,12 @@
+.chart-div {
+  background-color: white;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  color: black;
+  border:2px solid black;
+  padding: 5px;
+}
+
+
+

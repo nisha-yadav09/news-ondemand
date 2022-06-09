@@ -1,6 +1,7 @@
 
-import '../AuthPage/AuthPage.css';
+import '../SciencePage/SciencePage.css';
 import { useState, useEffect } from 'react';
+import Card from '../../components/Card/Card';
 import * as newsAPI from '../../utilities/news-api';
 
 export default function SciencePage({ setUser }) {
@@ -19,12 +20,9 @@ export default function SciencePage({ setUser }) {
     return (
         <>
             <h2> <h1>🗺</h1> Science News </h2>
-           
-            {isBusy ? (<p></p>) : (
-                science.map(function (d, id) {
-                    return <li>{d.title}</li>;
-                })
-            )}
+            <div className='news-main-div'>
+                <Card isBusy={isBusy} science={science} />
+            </div>
         </>
     );
 }
