@@ -10,4 +10,6 @@ router.get('/science', newsCtrl.getNewsScience);
 router.get('/technology', newsCtrl.getNewsTech);
 // GET /api/news/business
 router.get('/business', newsCtrl.getNewsBusiness);
+// GET /api/news/sports
+router.get('/sports', newsCtrl.getNewsSports);
 module.exports = router;

@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/science"> 🧠 Science</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/technology"> 💾 Technology</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/business"> 💵 Business</Link>
-      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to=""> 🤸‍♀️ Sports</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/sports"> 🤸‍♀️ Sports</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="" > 🌡️ Health</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to=""> 🎵 Entertainment</Link>
       <span>Welcome, {user.name}</span>

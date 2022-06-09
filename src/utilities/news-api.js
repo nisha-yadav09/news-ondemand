@@ -18,3 +18,7 @@ export function getTech() {
 export function getBusiness() {
   return sendRequest(`${BASE_URL}/business`);
 }
+
+export function getSports() {
+  return sendRequest(`${BASE_URL}/sports`);
+}

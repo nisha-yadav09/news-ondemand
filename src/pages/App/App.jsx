@@ -7,6 +7,7 @@ import GeneralPage from '../GeneralPage/GeneralPage';
 import SciencePage from '../SciencePage/SciencePage';
 import TechnologyPage from '../TechnologyPage/TechnologyPage';
 import BusinessPage from '../BusinessPage/BusinessPage';
+import SportsPage from '../SportsPage/SportsPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/news/science" element={<SciencePage/>} />
           <Route path="/news/technology" element={<TechnologyPage/>} />
           <Route path="/news/business" element={<BusinessPage/>} />
+          <Route path="/news/sports" element={<SportsPage/>} />
           <Route path="/*" element={<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>
