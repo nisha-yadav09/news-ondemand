@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom';
 import './Card.css';
 
-export default function Card({ isBusy, science }) {
+export default function Card({ isBusy, data }) {
     return (
         <>
             {isBusy ? (<p></p>) : (
-                science.map(function (d, id) {
+                data.map(function (d, id) {
                     return (
                         <div className = "card">
                             <div className = "container">
-                              <img src={d.urlToImage} alt="Image" className="img-news"/> 
+                              <img src={d.urlToImage} alt="news" className="img-news"/> 
                               <a href={ `${d.url}` } target="_blank" >Go to the article </a>
                                 <p>{d.title}</p>
                             </div>

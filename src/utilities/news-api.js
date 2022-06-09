@@ -10,3 +10,11 @@ export function getAll() {
 export function getScience() {
   return sendRequest(`${BASE_URL}/science`);
 }
+
+export function getTech() {
+  return sendRequest(`${BASE_URL}/technology`);
+}
+
+export function getBusiness() {
+  return sendRequest(`${BASE_URL}/business`);
+}

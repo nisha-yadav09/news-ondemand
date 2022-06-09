@@ -5,6 +5,8 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewsPage from '../NewsPage/NewsPage';
 import GeneralPage from '../GeneralPage/GeneralPage';
 import SciencePage from '../SciencePage/SciencePage';
+import TechnologyPage from '../TechnologyPage/TechnologyPage';
+import BusinessPage from '../BusinessPage/BusinessPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -17,9 +19,11 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-          <Route path="/news" element={<NewsPage user={user} setUser={setUser} />} /> 
-          <Route path="/news/general" element={<GeneralPage user={user} setUser={setUser} />} />
-          <Route path="/news/science" element={<SciencePage user={user} setUser={setUser} />} />
+          <Route path="/news" element={<NewsPage/>} /> 
+          <Route path="/news/general" element={<GeneralPage/>} />
+          <Route path="/news/science" element={<SciencePage/>} />
+          <Route path="/news/technology" element={<TechnologyPage/>} />
+          <Route path="/news/business" element={<BusinessPage/>} />
           <Route path="/*" element={<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>

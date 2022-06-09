@@ -6,5 +6,8 @@ const newsCtrl = require('../../controllers/api/news');
  router.get('/', newsCtrl.getNews);
 // GET /api/news/science
 router.get('/science', newsCtrl.getNewsScience);
-
+// GET /api/news/technology
+router.get('/technology', newsCtrl.getNewsTech);
+// GET /api/news/business
+router.get('/business', newsCtrl.getNewsBusiness);
 module.exports = router;
