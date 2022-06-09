@@ -3,7 +3,6 @@ import sendRequest from './send-request';
 const BASE_URL = '/api/news/';
 
 export function getAll() {
-  console.log(BASE_URL)
   return sendRequest(BASE_URL);
 }
 
@@ -29,4 +28,8 @@ export function getHealth() {
 
 export function getEntertainment() {
   return sendRequest(`${BASE_URL}/entertainment`);
+}
+
+export function getGeneral() {
+  return sendRequest(`${BASE_URL}/general`);
 }

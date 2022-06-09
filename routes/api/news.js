@@ -17,4 +17,7 @@ router.get('/health', newsCtrl.getNewsHealth);
 // GET /api/news/entertainment
 router.get('/entertainment', newsCtrl.getNewsEntertainment);
 
+// GET /api/news/general
+router.get('/general', newsCtrl.getNewsGeneral);
+
 module.exports = router;

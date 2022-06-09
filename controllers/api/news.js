@@ -11,7 +11,8 @@ module.exports = {
    getNewsBusiness,
    getNewsSports,
    getNewsHealth,
-   getNewsEntertainment
+   getNewsEntertainment,
+   getNewsGeneral
   };
 
 async function getNews(req, res) {
@@ -118,6 +119,23 @@ async function getNewsHealth(req, res) {
 
 async function getNewsEntertainment(req, res) {
   const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}&category=entertainment`;
+  const options = {
+    headers: {
+      // Authorization: `token ${token}`,
+      "Content-Type": "application/json",
+      Accept: 'application/json;charset=utf-8',
+      withCredentials: true,
+      'User-Agent': '*',
+    }
+  };
+
+  const response = await fetch(`${rootURL}`);
+  const responseData = await response.json();
+  res.json(responseData.articles);
+}
+
+async function getNewsGeneral(req, res) {
+  const rootURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsToken}`;
   const options = {
     headers: {
       // Authorization: `token ${token}`,

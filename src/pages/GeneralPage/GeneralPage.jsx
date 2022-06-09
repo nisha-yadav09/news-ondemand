@@ -1,29 +1,27 @@
 
-import '../AuthPage/AuthPage.css';
 import { useState, useEffect } from 'react';
+import Card from '../../components/Card/Card';
 import * as newsAPI from '../../utilities/news-api';
 
 export default function GeneralPage({ setUser }) {
     const [isBusy, setBusy] = useState(true)
-    const [news, setNews] = useState([]);
+    const [general, setGeneral] = useState([]);
 
     useEffect(function () {
-        async function getNews() {
-            const news = await newsAPI.getAll();
+        async function getNewsGeneral() {
+            const general = await newsAPI.getGeneral();
             setBusy(false);
-            setNews(news);
+            setGeneral(general);
         }
-        getNews();
+        getNewsGeneral();
     }, []);
 
     return (
         <>
-            <h2> <h1>🗺</h1> General News </h2>
-            {isBusy ? (<p></p>) : (
-                news.map(function (d, id) {
-                    return <li>{d.title}</li>;
-                })
-            )}
+            <h2>General News</h2>
+            <div className='news-main-div'>
+                <Card isBusy={isBusy} data={general} />
+            </div>
         </>
     );
 }
