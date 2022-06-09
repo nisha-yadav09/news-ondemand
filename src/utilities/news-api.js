@@ -26,3 +26,7 @@ export function getSports() {
 export function getHealth() {
   return sendRequest(`${BASE_URL}/health`);
 }
+
+export function getEntertainment() {
+  return sendRequest(`${BASE_URL}/entertainment`);
+}

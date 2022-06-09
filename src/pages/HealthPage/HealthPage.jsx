@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import * as newsAPI from '../../utilities/news-api';
 
-export default function SportsPage({ setUser }) {
+export default function HealthPage({ setUser }) {
     const [isBusy, setBusy] = useState(true)
     const [health, setHealth] = useState([]);
 
