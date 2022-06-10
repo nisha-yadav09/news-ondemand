@@ -13,6 +13,7 @@ export default function ChatPage() {
 	useEffect(
 		() => {
 			socketRef.current = io.connect(url)
+            console.log(url)
 			socketRef.current.on("message", ({ name, message }) => {
 				setChat([ ...chat, { name, message } ])
 			})
