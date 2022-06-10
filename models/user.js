@@ -27,7 +27,7 @@ const userSchema = new Schema({
       return ret;
     }
   }
-});
+}) ;
 
 userSchema.pre('save', async function(next) {
   // 'this' is the user doc
