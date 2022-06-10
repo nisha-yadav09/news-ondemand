@@ -10,7 +10,9 @@ import BusinessPage from '../BusinessPage/BusinessPage';
 import SportsPage from '../SportsPage/SportsPage';
 import HealthPage from '../HealthPage/HealthPage';
 import EntertainmentPage from '../EntertainmentPage/EntertainmentPage';
+import ChatPage from '../ChatPage/ChatPage';
 import NavBar from '../../components/NavBar/NavBar';
+import io from "socket.io-client"
 import './App.css';
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
           <Route path="/news/sports" element={<SportsPage/>} />
           <Route path="/news/health" element={<HealthPage/>} />
           <Route path="/news/entertainment" element={<EntertainmentPage/>} />
+          <Route path="/news/chat" element={<ChatPage/>} />
           <Route path="/*" element={<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>

@@ -9,6 +9,16 @@ require('./config/database');
 
 const app = express();
 
+const http = require('http').Server(app);
+const io = require('socket.io')(http)
+
+io.on('connection', socket => {
+  socket.on('message', ({ name, message }) => {
+    io.emit('message', { name, message })
+  })
+})
+
+
 app.use(logger('dev'));
 // Process data in body of request if 
 // Content-Type: 'application/json'
@@ -33,6 +43,11 @@ app.get('/*', function(req, res) {
 });
 
 const port = process.env.PORT || 3001;
+
+http.listen(port, function() {
+  console.log(`Listening on port ${port}`);
+});
+
 
 app.listen(port, function() {
   console.log(`Express app running on port ${port}`);

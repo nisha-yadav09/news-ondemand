@@ -19,6 +19,7 @@ export default function NavBar({ user, setUser }) {
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/sports"> 🤸‍♀️ Sports</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/health" > 🌡️ Health</Link>
       <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/entertainment"> 🎵 Entertainment</Link>
+      <Link style={{ textDecoration: 'none' , marginRight: '50px' }} to="/news/chat"> Chat Room</Link>
       <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
