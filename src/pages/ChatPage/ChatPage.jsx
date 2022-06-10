@@ -1,4 +1,4 @@
-import TextField from "@material-ui/core/TextField"
+import {TextField} from "@mui/material"
 import React, { useEffect, useRef, useState } from "react"
 import io from "socket.io-client"
 import "./ChatPage.css"
