@@ -7,7 +7,7 @@ require('dotenv').config();
 // Connect to db after the dotenv above
 require('./config/database');
 
-const app = express();
+const app = express(); //Node --> express is a function (req,res,next).
 
 const http = require('http').Server(app);
 const io = require('socket.io')(http)
