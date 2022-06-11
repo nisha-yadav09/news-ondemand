@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import * as newsAPI from '../../utilities/news-api';
 import BarChart from "../../components/BarChart/BarChart";
 import LineChart from "../../components/LineChart/LineChart";
-import NavBar from '../../components/NavBar/NavBar';
 import Drawer from '../../components/Drawer/Drawer';
 export default function NewsPage({ user, setUser }) {
     
@@ -32,7 +31,7 @@ export default function NewsPage({ user, setUser }) {
                       "#f3ba2f",
                       "#2a71d0",
                     ],
-                    borderColor: "#77628c",
+                    borderColor: "black",
                     borderWidth: 2,
                   },
                 ],
@@ -45,10 +44,10 @@ export default function NewsPage({ user, setUser }) {
         <>
         <Drawer user={user} setUser={setUser} />
         
-           {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginTop: '5%', marginLeft: '25%'}}>
-                {/* <div className="App-div" style={{ width: 700 }}>
+           {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginLeft: '25%'}}>
+                <div className="App-div" >
                     <BarChart chartData={userData} />
-                </div> */}
+                </div>
                 <div  >
                     <LineChart chartData={userData} />
                 </div>

@@ -19,7 +19,6 @@ export default function SciencePage({ setUser }) {
 
     return (
         <>
-            <h2> <h1>🗺</h1> Science News </h2>
             <div className='news-main-div'>
                 <Card isBusy={isBusy} data={science} />
             </div>

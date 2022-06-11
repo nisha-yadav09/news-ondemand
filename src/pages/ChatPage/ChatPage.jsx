@@ -44,7 +44,7 @@ export default function ChatPage() {
 	}
 
 	return (
-		<div className="card">
+		<div className="card-chat">
 			<form onSubmit={onMessageSubmit}>
 				<h1>Messenger</h1>
 				<div className="name-field">

@@ -9,10 +9,11 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 
 export default function Drawers() {
-  const drawerWidth = 240;
+  const drawerWidth = 150;
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -28,30 +29,13 @@ export default function Drawers() {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, bgcolor: '#71a0a5'}}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['General', 'Science', 'Technology', 'Business', 'Sports', 'Health', 'Entertainment'].map((text, index) => (
-         <ListItem button key={text}>
-            <Link style={{ marginRight: '50px' }} to={`/news/${text}`}> {text}</Link>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
-
   return (
 <>
 <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
       >
       </AppBar>
       <Drawer
@@ -60,21 +44,26 @@ export default function Drawers() {
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
+             height: '98%',
+            margin: '5px',
+            
             boxSizing: 'border-box',
+            borderRadius : '5px',
+            bgcolor: '#71a0a5',
           },
         }}
         variant="permanent"
         anchor="left"
       >
-        <Toolbar />
-        <Divider />
-        <List>
+        <TravelExploreIcon style={{ color: "black" , alignSelf:'center', marginTop:'20px' }} />
+        <List style={{marginTop:'100px'}}>
         {['General', 'Science', 'Technology', 'Business', 'Sports', 'Health', 'Entertainment'].map((text, index) => (
-         <ListItem button key={text}>
-            <Link style={{ marginRight: '50px' }} to={`/news/${text}`}> {text}</Link>
+         <ListItem button key={text} >
+            <Link style={{ textDecoration: 'none', color:'black', textAlign:'center', fontWeight:'bold' }} to={`/news/${text}`}> {text}</Link>
           </ListItem>
         ))}
       </List>
+     
       </Drawer>
       <Box
         component="main"
