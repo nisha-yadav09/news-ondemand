@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import * as newsAPI from '../../utilities/news-api';
+import NavBar from '../../components/NavBar/NavBar';
 
-export default function GeneralPage({ setUser }) {
+export default function GeneralPage({ user, setUser }) {
     const [isBusy, setBusy] = useState(true)
     const [general, setGeneral] = useState([]);
 
@@ -18,6 +19,7 @@ export default function GeneralPage({ setUser }) {
 
     return (
         <>
+            <NavBar user={user} setUser={setUser} />
             <h2>General News</h2>
             <div className='news-main-div'>
                 <Card isBusy={isBusy} data={general} />

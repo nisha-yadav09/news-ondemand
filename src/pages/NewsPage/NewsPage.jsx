@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import * as newsAPI from '../../utilities/news-api';
 import BarChart from "../../components/BarChart/BarChart";
 import LineChart from "../../components/LineChart/LineChart";
-
-export default function NewsPage({ setUser }) {
+import NavBar from '../../components/NavBar/NavBar';
+import Drawer from '../../components/Drawer/Drawer';
+export default function NewsPage({ user, setUser }) {
     
     const [isBusy, setBusy] = useState(true)
     const [news, setNews] = useState([]);
@@ -25,33 +26,33 @@ export default function NewsPage({ setUser }) {
                     label: "What's Trending Today - USA",
                     data: news.map((data) => data.tweet_volume),
                     backgroundColor: [
-                      "rgba(75,192,192,1)",
+                      "#77628c",
                       "#ecf0f1",
                       "#50AF95",
                       "#f3ba2f",
                       "#2a71d0",
                     ],
-                    borderColor: "black",
+                    borderColor: "#77628c",
                     borderWidth: 2,
                   },
                 ],
               })
         }
         getNews();
-        console.log(news);
     }, []);
 
     return (
         <>
-           {(isBusy ? <p/> : <div className="App">
-                <div style={{ width: 700 }}>
+        <Drawer user={user} setUser={setUser} />
+        
+           {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginTop: '5%', marginLeft: '25%'}}>
+                {/* <div className="App-div" style={{ width: 700 }}>
                     <BarChart chartData={userData} />
-                </div>
-                <div style={{ width: 700 }}>
+                </div> */}
+                <div  >
                     <LineChart chartData={userData} />
                 </div>
             </div>)}
         </>
-
     );
 }

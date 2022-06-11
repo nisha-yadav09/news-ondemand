@@ -15,8 +15,11 @@ import NavBar from '../../components/NavBar/NavBar';
 import io from "socket.io-client"
 import './App.css';
 
+
 function App() {
+  let navi =''
   const [user, setUser] = useState(getUser());
+ 
 
   return (
     <main className="App">
@@ -24,16 +27,16 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-          <Route path="/news" element={<NewsPage/>} /> 
-          <Route path="/news/general" element={<GeneralPage/>} />
-          <Route path="/news/science" element={<SciencePage/>} />
-          <Route path="/news/technology" element={<TechnologyPage/>} />
-          <Route path="/news/business" element={<BusinessPage/>} />
-          <Route path="/news/sports" element={<SportsPage/>} />
-          <Route path="/news/health" element={<HealthPage/>} />
-          <Route path="/news/entertainment" element={<EntertainmentPage/>} />
-          <Route path="/news/chat" element={<ChatPage/>} />
-          <Route path="/*" element = {<Navigate to="/news" user={user} setUser={setUser} />} /> 
+            <Route path="/news" element={<NewsPage />} /> 
+            <Route path="/news/general" element={<GeneralPage/>} />
+            <Route path="/news/science" element={<SciencePage/>} />
+            <Route path="/news/technology" element={<TechnologyPage/>} />
+            <Route path="/news/business" element={<BusinessPage/>} />
+            <Route path="/news/sports" element={<SportsPage/>} />
+            <Route path="/news/health" element={<HealthPage/>} />
+            <Route path="/news/entertainment" element={<EntertainmentPage/>} />
+            <Route path="/news/chat" element={<ChatPage/>} />
+            <Route path="/*" element = {<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>
         :

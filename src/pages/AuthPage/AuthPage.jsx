@@ -21,7 +21,7 @@ export default function AuthPage({ setUser }) {
         <h1 style={{ color: "#71a0a5" }}> World <TravelExploreIcon style={{ color: "#71a0a5" }} /> News </h1>
         <div className='Auth-div'>
           <SignUpForm setUser={setUser} />
-          <div class="vl">
+          <div className="vl">
 
           </div>
           <LoginForm setUser={setUser} />
