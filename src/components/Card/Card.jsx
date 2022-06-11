@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Link } from 'react-router-dom';
 
 
 export default function ImgMediaCard({ isBusy, data }) {
@@ -25,7 +26,7 @@ export default function ImgMediaCard({ isBusy, data }) {
                             />
                             <CardContent>
 
-                                <Typography variant="body2" color="clack">
+                                <Typography variant="body2" color="black">
                                     {d.title}
                                 </Typography>
                             </CardContent>
@@ -34,7 +35,7 @@ export default function ImgMediaCard({ isBusy, data }) {
                                     <FavoriteIcon />
                                 </IconButton>
                                 <IconButton aria-label="share" >
-                                    <ShareIcon />
+                                    <Link to="/news/chat"><ShareIcon/></Link> 
                                 </IconButton>
                                 <Button size="small"><a href={`${d.url}`} target="_blank" >Learn More</a></Button>
                             </CardActions>
