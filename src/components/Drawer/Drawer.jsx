@@ -7,13 +7,19 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import SportsFootballRoundedIcon from '@mui/icons-material/SportsFootballRounded';
+import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
+import CellWifiRoundedIcon from '@mui/icons-material/CellWifiRounded';
+import ScienceRoundedIcon from '@mui/icons-material/ScienceRounded';
+import MedicalInformationRoundedIcon from '@mui/icons-material/MedicalInformationRounded';
+import LiveTvRoundedIcon from '@mui/icons-material/LiveTvRounded';
+import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 
 
 export default function Drawers() {
-  const drawerWidth = 150;
+  const drawerWidth = 200;
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -59,7 +65,17 @@ export default function Drawers() {
         <List style={{marginTop:'100px'}}>
         {['General', 'Science', 'Technology', 'Business', 'Sports', 'Health', 'Entertainment'].map((text, index) => (
          <ListItem button key={text} >
-            <Link style={{ textDecoration: 'none', color:'black', textAlign:'center', fontWeight:'bold' }} to={`/news/${text}`}> {text}</Link>
+          
+            <Link style={{ textDecoration: 'none', color:'black', textAlign:'center', fontWeight:'bold'}} to={`/news/${text}`}> 
+            {text === 'Sports' && <SportsFootballRoundedIcon />}
+            {text === 'Business' && <WorkHistoryRoundedIcon />}
+            {text === 'Technology' && <CellWifiRoundedIcon />}
+            {text === 'Science' && <ScienceRoundedIcon />}
+            {text === 'Health' && <MedicalInformationRoundedIcon />}
+            {text === 'Entertainment' && <LiveTvRoundedIcon />}
+            {text === 'General' && <CalendarMonthRoundedIcon />}       
+            <span style={{marginLeft: '15px'}}>{text}</span>
+            </Link>
           </ListItem>
         ))}
       </List>

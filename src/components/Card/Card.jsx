@@ -10,7 +10,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
 
-
 export default function ImgMediaCard({ isBusy, data }) {
     return (
         <>
@@ -25,7 +24,6 @@ export default function ImgMediaCard({ isBusy, data }) {
                                 image={d.urlToImage}
                             />
                             <CardContent>
-
                                 <Typography variant="body2" color="black">
                                     {d.title}
                                 </Typography>
@@ -40,7 +38,6 @@ export default function ImgMediaCard({ isBusy, data }) {
                                 <Button size="small"><a href={`${d.url}`} target="_blank" >Learn More</a></Button>
                             </CardActions>
                         </Card>
-
                     )
                 })
             )}
