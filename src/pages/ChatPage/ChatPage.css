@@ -1,6 +1,6 @@
-.card-chart {
+.card-chat {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     margin: 30px;
     min-height: 30rem;
   }
@@ -15,9 +15,9 @@
     margin-bottom: 40px;
   }
   
-  button {
-    margin-top: 20px;
-    padding: 10px;
+  button.chat {
+   height: 40px;
+   width: 80px;
     border-radius: 5px;
   }
   

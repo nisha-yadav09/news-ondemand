@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from "react"
 import io from "socket.io-client"
 import "./ChatPage.css"
 
-export default function ChatPage() {
-	const [ state, setState ] = useState({ message: "", name: "" })
+export default function ChatPage({ user, setUser }) {
+	console.log(user.name);
+	const [ state, setState ] = useState({ message: "", name: user.name })
 	const [ chat, setChat ] = useState([])
     let url = `${window.location.origin.toString()}`
 
@@ -36,21 +37,20 @@ export default function ChatPage() {
 	const renderChat = () => {
 		return chat.map(({ name, message }, index) => (
 			<div key={index}>
-				<h3>
+				<h5 style={{color:'black'}}>
 					{name}: <span>{message}</span>
-				</h3>
+				</h5>
 			</div>
 		))
 	}
 
 	return (
 		<div className="card-chat">
+			<div className="render-chat" style={{overflowY: 'auto', maxHeight:'300px'}} >
+				{renderChat()}
+			</div>
+			<div >
 			<form onSubmit={onMessageSubmit}>
-				<h1>Messenger</h1>
-				<div className="name-field">
-					<TextField name="name" onChange={(e) => onTextChange(e)} value={state.name} label="Name" />
-				</div>
-				<div>
 					<TextField
 						name="message"
 						onChange={(e) => onTextChange(e)}
@@ -58,14 +58,12 @@ export default function ChatPage() {
 						id="outlined-multiline-static"
 						variant="outlined"
 						label="Message"
+						style={{width:'200px', borderColor:'black'}}
 					/>
-				</div>
-				<button>Send Message</button>
+				<button className="chat">Send</button>
 			</form>
-			<div className="render-chat">
-				<h1>Chat Log</h1>
-				{renderChat()}
 			</div>
+			
 		</div>
 	)
 }

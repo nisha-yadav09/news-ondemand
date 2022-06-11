@@ -35,7 +35,7 @@ function App() {
             <Route path="/news/sports" element={<SportsPage/>} />
             <Route path="/news/health" element={<HealthPage/>} />
             <Route path="/news/entertainment" element={<EntertainmentPage/>} />
-            <Route path="/news/chat" element={<ChatPage/>} />
+            <Route path="/news/chat" element={<ChatPage user={user} setUser={setUser}/>} />
             <Route path="/*" element = {<Navigate to="/news" user={user} setUser={setUser} />} /> 
           </Routes>
         </>
