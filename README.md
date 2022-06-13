@@ -1,6 +1,5 @@
-
-<h1> :newspaper: News On Demand :newspaper:</h1>
 <div align = "center">
+   <h1> :newspaper: News On Demand :newspaper:</h1>
    <h3><a href="https://news-ondemand-sei.herokuapp.com/"> News </a></h3>                             
 </div>
 <h1> :crayon: Description</h1>
@@ -10,12 +9,16 @@
 
 <details open>
 <label>Auth Page</label>
+
 ![Imgur](https://i.imgur.com/hSCCiAM.png)
 <label>Landing Page</label>
+
 ![Imgur](https://i.imgur.com/fFm6wdl.png)
 <label>News Page</label>
+
 ![Imgur](https://i.imgur.com/WFF1dSr.png)
 <label>Chat Saved</label>
+
 ![Imgur](https://i.imgur.com/7orepU4.png)
 </details>
 
@@ -40,5 +43,5 @@
 
 ## :fast_forward: Next Steps 
 
-- Make the page responsive.
-- Add feature to get twitter feed based on location.
+- Make the page responsive
+- Add feature to get twitter feed based on location
