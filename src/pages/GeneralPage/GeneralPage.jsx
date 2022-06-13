@@ -19,8 +19,6 @@ export default function GeneralPage({ user, setUser }) {
 
     return (
         <>
-            <NavBar user={user} setUser={setUser} />
-            <h2>General News</h2>
             <div className='news-main-div'>
                 <Card isBusy={isBusy} data={general} />
             </div>

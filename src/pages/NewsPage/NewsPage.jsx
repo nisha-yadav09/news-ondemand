@@ -4,6 +4,8 @@ import * as newsAPI from '../../utilities/news-api';
 import BarChart from "../../components/BarChart/BarChart";
 import LineChart from "../../components/LineChart/LineChart";
 import Drawer from '../../components/Drawer/Drawer';
+import Card from '@mui/material/Card';
+
 export default function NewsPage({ user, setUser }) {
     
     const [isBusy, setBusy] = useState(true)
@@ -45,11 +47,15 @@ export default function NewsPage({ user, setUser }) {
         <Drawer user={user} setUser={setUser} />
         
            {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginLeft: '25%'}}>
-                <div className="App-div" >
+                <div  style={{  borderColor:'2px solid black'}}>
+                <Card style={{ backgroundColor: "#71a0a5", marginBottom: '18px', border: '2px solid black'}}>
                     <BarChart chartData={userData} />
+                    </Card>
                 </div>
                 <div  >
+                <Card style={{ backgroundColor: "#71a0a5" , border: '2px solid black'}}>
                     <LineChart chartData={userData} />
+                    </Card>
                 </div>
             </div>)}
         </>

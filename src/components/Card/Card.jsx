@@ -15,7 +15,7 @@ export default function ImgMediaCard({ isBusy, data }) {
         <>
             {isBusy ? (<p></p>) : (
                 data.map(function (d, id) {
-                    return (
+                    return ( 
                         <Card sx={{ maxWidth: 345, bgcolor: 'white' }}>
                             <CardMedia
                                 component="img"
