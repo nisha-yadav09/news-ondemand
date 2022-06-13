@@ -7,6 +7,7 @@ import Drawer from '../../components/Drawer/Drawer';
 import Card from '@mui/material/Card';
 
 export default function NewsPage({ user, setUser }) {
+   
     
     const [isBusy, setBusy] = useState(true)
     const [news, setNews] = useState([]);
@@ -22,6 +23,13 @@ export default function NewsPage({ user, setUser }) {
             setNews(news);
             setUserData({
                 labels: news.map((data) => data.name),
+                options: {
+                    plugins: {
+                        labels: {
+                            color: 'red'
+                          }
+                    }
+                },
                 datasets: [
                   {
                     label: "What's Trending Today - USA",
@@ -45,15 +53,14 @@ export default function NewsPage({ user, setUser }) {
     return (
         <>
         <Drawer user={user} setUser={setUser} />
-        
            {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginLeft: '25%'}}>
-                <div  style={{  borderColor:'2px solid black'}}>
-                <Card style={{ backgroundColor: "#71a0a5", marginBottom: '18px', border: '2px solid black'}}>
+                <div>
+                <Card style={{ color: 'black', backgroundColor: "#71a0a5", opacity: '0.8', marginBottom: '18px', marginTop: '40px', border: '2px solid black', boxShadow: "2px 2px 2px 2px black"}}>
                     <BarChart chartData={userData} />
                     </Card>
                 </div>
                 <div  >
-                <Card style={{ backgroundColor: "#71a0a5" , border: '2px solid black'}}>
+                <Card style={{ backgroundColor: "#71a0a5", opacity: '0.8', border: '2px solid black', boxShadow: "2px 2px 2px 2px black"}}>
                     <LineChart chartData={userData} />
                     </Card>
                 </div>
