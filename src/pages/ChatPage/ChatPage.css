@@ -2,13 +2,15 @@
     display: grid;
     grid-template-columns: 1fr;
     margin: 30px;
-    min-height: 30rem;
+    height: 30rem;
   }
+
   form {
     max-width: 350px;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+    background-color: #71a0a5;
   }
   
   .name-field {
@@ -18,7 +20,9 @@
   button.chat {
    height: 40px;
    width: 80px;
-    border-radius: 5px;
+   border-radius: 5px;
+   color: black;
+   border-color: black;
   }
   
   .render-chat {
@@ -26,6 +30,8 @@
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0px 3px 24px -8px rgba(0, 0, 0, 0.75);
+    margin-bottom: 15px;
+    background-color: #71a0a5;
   }
   
   h3 {
@@ -34,4 +40,9 @@
   
   span {
     color: black;
+  }
+
+  div.main-chat {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
   }

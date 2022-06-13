@@ -55,11 +55,14 @@ export default function NewsPage({ user, setUser }) {
         <Drawer user={user} setUser={setUser} />
            {(isBusy ? <p/> : <div className="graph-div" style ={{width :'60%' , textAlign: 'center', marginLeft: '25%'}}>
                 <div>
-                <Card style={{ color: 'black', backgroundColor: "#71a0a5", opacity: '0.8', marginBottom: '18px', marginTop: '40px', border: '2px solid black', boxShadow: "2px 2px 2px 2px black"}}>
+                <img src={require('../../bird.gif')} style={{maxWidth :"100%", height : "50px", float: "left"}} />
+                <Card style={{ color: 'black', backgroundColor: "#71a0a5", opacity: '0.8', marginBottom: '18px', marginTop: '28px', border: '2px solid black', boxShadow: "2px 2px 2px 2px black"}}>
                     <BarChart chartData={userData} />
                     </Card>
+                <img src={require('../../bird.gif')} style={{maxWidth :"100%", height : "50px", float: "right"}} />
                 </div>
-                <div  >
+                
+                <div>
                 <Card style={{ backgroundColor: "#71a0a5", opacity: '0.8', border: '2px solid black', boxShadow: "2px 2px 2px 2px black"}}>
                     <LineChart chartData={userData} />
                     </Card>

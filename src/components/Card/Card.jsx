@@ -11,6 +11,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
 
 export default function ImgMediaCard({ isBusy, data }) {
+    
     return (
         <>
             {isBusy ? (<p></p>) : (
@@ -30,7 +31,7 @@ export default function ImgMediaCard({ isBusy, data }) {
                             </CardContent>
                             <CardActions>
                                 <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon />
+                                    <FavoriteIcon style={{color:'red'}} />
                                 </IconButton>
                                 <IconButton aria-label="share" >
                                     <Link to="/news/chat"><ShareIcon/></Link> 
